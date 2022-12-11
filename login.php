@@ -24,7 +24,7 @@ while ($row = mysql_fetch_array($result)){
         $_SESSION['username'] = $row['user_n'];
         header('location: student.php');
     }else{
-        echo "<script>alert('Cannot find account');</script>";
+        echo "<script>alert('Cannot find the User');</script>";
     }
 }
 
