@@ -22,11 +22,11 @@
                             <h3 class="fw-bold mb-2 text-uppercase">Login</h3>
                             <?php if (isset($_GET['error'])) echo "<p class='error' style='color: #ffce00;background-color:#023662'>" . $_GET['error'] . "</p>"; ?>
                             <div class="form-floating form-outline form-white mb-3">
-                                <input type="text" id="username" name="uname" class="form-control form-control" placeholder="Username">
+                                <input type="text" id="username" name="user_n" class="form-control form-control" placeholder="Username">
                                 <label for="username" class="text-muted">Username</label>
                             </div>
                             <div class="form-floating form-outline form-white mb-3">
-                                <input type="password" id="password" name="password" class="form-control form-control" placeholder="Password">
+                                <input type="password" id="password" name="user_p" class="form-control form-control" placeholder="Password">
                                 <label for="password" class="text-muted">Password</label>
                             </div>
                             <button class="btn btn-outline-dark btn-md px-5" type="submit"><b>Login</b></button>

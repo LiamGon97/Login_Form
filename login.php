@@ -6,20 +6,20 @@ $username = $_POST['user_n'];
 $password = $_POST['user_p'];
 
 
-$result = mysql_query("SELECT * FROM users WHERE '$username'= user_n ");
+$result = mysqli_query($conn, "SELECT * FROM users WHERE user_n = '$username' ");
 
-while ($row = mysql_fetch_array($result)){
+while ($row = mysqli_fetch_array($result)){
     if($row['user_p'] == $password && $row['usertype'] == 'admin'){
         $_SESSION['id'] = $row['login_id'];
         $_SESSION['username'] = $row['user_n'];
         header('location: admin.php');
     }
-    elseif($row['user_p'] == $password && $row['usertype'] == 'faculty'){
+    elseif($row['user_p'] == $password && $row['usertype'] == 'Faculty'){
         $_SESSION['id'] = $row['login_id'];
         $_SESSION['username'] = $row['user_n'];
         header('location: faculty.php');
     }
-    elseif($row['user_p'] == $password && $row['usertype'] == 'student'){
+    elseif($row['user_p'] == $password && $row['usertype'] == 'Student'){
         $_SESSION['id'] = $row['login_id'];
         $_SESSION['username'] = $row['user_n'];
         header('location: student.php');
@@ -28,3 +28,4 @@ while ($row = mysql_fetch_array($result)){
     }
 }
 
+?>
